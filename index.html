@@ -794,6 +794,82 @@
         }
 
         /* ============================================
+           USE CASE BOXES
+           ============================================ */
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+            max-width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .use-case-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.4s var(--ease-out-expo),
+                        box-shadow 0.4s var(--ease-out-expo),
+                        border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .use-case-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--accent-blue-soft), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 16px;
+        }
+
+        .use-case-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            border-color: var(--accent-blue);
+        }
+
+        .use-case-box:hover::before {
+            opacity: 1;
+        }
+
+        .use-case-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .use-case-box p {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================
            FOOTER — Dark contrast
            ============================================ */
         .footer {
@@ -1281,6 +1357,34 @@
                     </div>
                     <h3>Apple Native</h3>
                     <p>Built with SwiftUI for macOS and iOS. Clean, light interface designed to feel right at home on your Mac.</p>
+                </div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="use-cases-grid">
+                <div class="use-case-box reveal-scale">
+                    <h4>Briefs</h4>
+                    <p>Structure appellate and trial briefs with organized sections for issues, rules, arguments, and authorities.</p>
+                </div>
+                <div class="use-case-box reveal-scale delay-1">
+                    <h4>Memos</h4>
+                    <p>Draft legal memoranda with IRAC-structured analysis, complete with TO/FROM headers and formal formatting.</p>
+                </div>
+                <div class="use-case-box reveal-scale delay-2">
+                    <h4>Doc Review Organization</h4>
+                    <p>Categorize and annotate documents during review. Tag by importance, status, and category for fast retrieval.</p>
+                </div>
+                <div class="use-case-box reveal-scale delay-1">
+                    <h4>Case Strategy</h4>
+                    <p>Map out your case theory with hierarchical arguments, counterarguments, and supporting authorities in one place.</p>
+                </div>
+                <div class="use-case-box reveal-scale delay-2">
+                    <h4>Class Notes</h4>
+                    <p>Capture lecture notes with rich formatting and bullet lists. Organize by topic with collapsible sections.</p>
+                </div>
+                <div class="use-case-box reveal-scale delay-3">
+                    <h4>Outlines</h4>
+                    <p>Build course outlines and study guides with nested sections, drag-and-drop reordering, and one-click export.</p>
                 </div>
             </div>
 
