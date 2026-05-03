@@ -671,6 +671,35 @@
             color: var(--fg);
             font-weight: 500;
         }
+        .studio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 1.8rem;
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            color: var(--fg);
+            transition: color 0.4s var(--ease-out);
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .studio-link::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 100%;
+            bottom: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: right 0.55s var(--ease-out-quart);
+        }
+        .studio-link:hover { color: var(--accent); }
+        .studio-link:hover::after { right: 0; }
+        .studio-link svg {
+            width: 14px; height: 14px;
+            transition: transform 0.55s var(--ease-out-quart);
+        }
+        .studio-link:hover svg { transform: translateX(5px); }
 
         /* Principles row */
         .principles {
@@ -1930,6 +1959,10 @@
                     <p class="reveal">
                         We do not chase trends, ship beta-quality features, or pad the catalog with side projects. Focus is the strategy.
                     </p>
+                    <a class="studio-link reveal" href="about/">
+                        Meet the team
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
                 </div>
 
                 <ul class="principles stagger">
@@ -2441,6 +2474,7 @@
                 <a href="#ffl">FFL</a>
                 <a href="#brief">Briefcase</a>
                 <a href="#bell">Bellwether</a>
+                <a href="about/">About</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="mailto:walker@pltfrmsoftware.com">Contact</a>
             </div>
